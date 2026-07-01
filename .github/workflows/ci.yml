@@ -1,0 +1,16 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Compile the project
+        run: javac -d bin src/*.java
+      - name: Run the unit tests
+        run: java -cp bin TestRunner
