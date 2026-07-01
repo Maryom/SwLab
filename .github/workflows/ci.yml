@@ -11,6 +11,6 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       - name: Compile the project
-        run: javac -d bin src/*.java
+        run: javac -d bin Lab 5/src/Package1/*.java
       - name: Run the unit tests
         run: java -cp bin TestRunner
